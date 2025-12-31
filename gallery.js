@@ -9,12 +9,12 @@
 
 const galleryImages = [
     // Example images - replace these with your own!
-    'images/example1.jpg',
-    'images/example2.jpg',
-    'images/example3.jpg',
-    'images/example4.jpg',
-    'images/example5.jpg',
-    'images/example6.jpg',
+    'HOME/Final_Final_Illustration_rain_small.jpg',
+    'HOME/ITZEL_HOUSE_SCREENSHOT.png.jpg',
+    'HOME/Week1_WW_Fall_Laplanche.jpg.jpg',
+    'HOME/example4.jpg',
+    'HOME/example5.jpg',
+    'HOME/example6.jpg',
     // Add more images here - just copy the line above and change the filename
 ];
 
