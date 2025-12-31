@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- ===== EDIT PAGE TITLE HERE ===== -->
-    <title>Shop - Your Name</title>
+    <title>Category 1 - Your Name</title>
     <!-- ================================ -->
     
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Gumroad Script -->
-    <script src="https://gumroad.com/js/gumroad.js"></script>
 </head>
 <body>
     <!-- HEADER & NAVIGATION -->
@@ -141,91 +138,58 @@
 
     <!-- MAIN CONTENT -->
     <main class="container">
-        <!-- ===== EDIT SHOP PAGE CONTENT HERE ===== -->
+        
+        <!-- ===== OPTION 1: TEXT ONLY ===== -->
+        <!-- Uncomment this section if you want text on this page -->
+        <!--
         <div class="text-content">
-            <h1>Shop</h1>
+            <h1>Category 1 Title</h1>
             
             <p>
-                Check out my courses, tutorials, and other resources!
+                Add your description here. You can write about this category,
+                what kind of work you do in this area, etc.
             </p>
-        </div>
-        <!-- ======================================= -->
-        
-        <!-- ===== GUMROAD PRODUCTS HERE ===== -->
-        <!-- OPTION 1: Simple Button (Overlay Checkout) -->
-        <div style="text-align: center; margin: 3rem 0;">
-            <a class="gumroad-button" 
-               href="https://yourname.gumroad.com/l/product-name" 
-               data-gumroad-overlay-checkout="true"
-               style="display: inline-block; padding: 1.2rem 2.5rem; background: #2563eb; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease;">
-                Buy My Course - $99
-            </a>
-            <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
-                Change the link and text above to match your Gumroad product
+            
+            <p>
+                Add more paragraphs as needed.
             </p>
-        </div>
-        
-        <!-- OPTION 2: Product Card Embed -->
-        <!-- Uncomment this section to use product cards instead -->
-        <!--
-        <div style="max-width: 600px; margin: 3rem auto;">
-            <a class="gumroad-button" href="https://yourname.gumroad.com/l/product-name">
-                View Product
-            </a>
         </div>
         -->
-        
-        <!-- OPTION 3: Multiple Products Grid -->
-        <!-- Uncomment to add multiple products -->
-        <!--
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0;">
-            <div style="text-align: center;">
-                <a class="gumroad-button" 
-                   href="https://yourname.gumroad.com/l/product1" 
-                   data-gumroad-overlay-checkout="true"
-                   style="display: inline-block; padding: 1rem 2rem; background: #2563eb; color: white; text-decoration: none; border-radius: 6px;">
-                    Product 1 - $49
-                </a>
-            </div>
-            <div style="text-align: center;">
-                <a class="gumroad-button" 
-                   href="https://yourname.gumroad.com/l/product2" 
-                   data-gumroad-overlay-checkout="true"
-                   style="display: inline-block; padding: 1rem 2rem; background: #2563eb; color: white; text-decoration: none; border-radius: 6px;">
-                    Product 2 - $99
-                </a>
-            </div>
+        <!-- =============================== -->
         </div>
-        -->
-        <!-- ================================= -->
+    </footer><!-- ===== OPTION 2: GALLERY ONLY ===== -->
+        <!-- This is active by default - shows just the gallery -->
+        <section class="intro">
+            <!-- ===== EDIT PAGE HEADING (OPTIONAL) ===== -->
+            <h2>Category 1</h2>
+            <p>Optional description for this gallery category.</p>
+            <!-- ======================================== -->
+        </section>
         
-        <!-- Instructions for customizing -->
-        <div class="text-content" style="margin-top: 4rem; padding: 2rem; background: #f5f5f5; border-radius: 8px;">
-            <h2>How to Add Your Gumroad Products:</h2>
-            
-            <p><strong>Step 1:</strong> Go to your Gumroad product page</p>
-            <p><strong>Step 2:</strong> Copy your product URL (e.g., https://yourname.gumroad.com/l/product-name)</p>
-            <p><strong>Step 3:</strong> Replace the placeholder URL above with your actual product URL</p>
-            <p><strong>Step 4:</strong> Change the button text and price to match your product</p>
-            
-            <p style="margin-top: 1.5rem;">
-                <strong>For multiple products:</strong> Uncomment the "Multiple Products Grid" section and add more product buttons.
-            </p>
-            
-            <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
-                You can delete this instructions box once you've set up your products!
-            </p>
+        <div class="gallery" id="gallery">
+            <!-- Gallery items will be generated from page1-gallery.js -->
         </div>
+        <!-- =================================== -->
+        
+        <!-- ===== OPTION 3: TEXT + GALLERY ===== -->
+        <!-- Uncomment the text-content section above AND keep the gallery section -->
+        <!-- This will show both text and images on the same page -->
+        <!-- ==================================== -->
     </main>
 
-    <!-- FOOTER -->
+    <!-- Gallery JavaScript - Edit page1-gallery.js</script>
+
+    <!-- FOOTER (GREY EMAIL ICON ONLY) -->
     <footer style="border-top: 1px solid #e0e0e0; padding: 3rem 0; margin-top: 4rem; text-align: center;">
         <div class="container">
-            <!-- ===== EDIT EMAIL BUTTON HERE ===== -->
-            <a href="/cdn-cgi/l/email-protection#d0a9bfa5a2fdb5bdb1b9bc90b5a8b1bda0bcb5feb3bfbd" style="display: inline-block; padding: 1rem 2rem; background: #2563eb; color: white; text-decoration: none; border-radius: 4px; font-weight: 500; transition: background 0.3s ease; margin-bottom: 2rem;">
-                Get In Touch
+            <!-- ===== EDIT EMAIL LINK HERE ===== -->
+            <a href="/cdn-cgi/l/email-protection#e79e889295ca828a868e8ba7829f868a978b82c984888a" aria-label="Email" style="display: inline-block; color: #999; transition: color 0.3s ease;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
             </a>
-            <!-- =================================== -->
+            <!-- ==================================== -->
             
             <!-- ===== EDIT COPYRIGHT HERE ===== -->
             <p style="color: #666; font-size: 0.9rem; margin-top: 1.5rem;">
