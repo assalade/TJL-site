@@ -370,6 +370,116 @@
         </div>
     </footer>
 
+        <!-- Blog Image Lightbox JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all blog images
+            const blogImages = document.querySelectorAll('.blog-post-image, .blog-post-images img');
+            
+            if (blogImages.length === 0) return;
+            
+            let currentImageIndex = 0;
+            let allImageSources = Array.from(blogImages).map(img => img.src);
+            let isZoomed = false;
+            
+            // Create lightbox elements
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            lightbox.innerHTML = `
+                <span class="lightbox-close">&times;</span>
+                <span class="lightbox-prev">‹</span>
+                <span class="lightbox-next">›</span>
+                <div class="lightbox-image-container">
+                    <img class="lightbox-image" src="" alt="">
+                </div>
+                <div class="lightbox-counter"></div>
+            `;
+            document.body.appendChild(lightbox);
+            
+            const lightboxImg = lightbox.querySelector('.lightbox-image');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            const prevBtn = lightbox.querySelector('.lightbox-prev');
+            const nextBtn = lightbox.querySelector('.lightbox-next');
+            const counter = lightbox.querySelector('.lightbox-counter');
+            const imageContainer = lightbox.querySelector('.lightbox-image-container');
+            
+            // Open lightbox
+            function openLightbox(index) {
+                currentImageIndex = index;
+                lightboxImg.src = allImageSources[index];
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                updateCounter();
+                isZoomed = false;
+                lightboxImg.classList.remove('zoomed');
+            }
+            
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+                isZoomed = false;
+                lightboxImg.classList.remove('zoomed');
+            }
+            
+            // Update counter
+            function updateCounter() {
+                counter.textContent = `${currentImageIndex + 1} / ${allImageSources.length}`;
+            }
+            
+            // Show next image
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % allImageSources.length;
+                lightboxImg.src = allImageSources[currentImageIndex];
+                updateCounter();
+                isZoomed = false;
+                lightboxImg.classList.remove('zoomed');
+            }
+            
+            // Show previous image
+            function showPreviousImage() {
+                currentImageIndex = (currentImageIndex - 1 + allImageSources.length) % allImageSources.length;
+                lightboxImg.src = allImageSources[currentImageIndex];
+                updateCounter();
+                isZoomed = false;
+                lightboxImg.classList.remove('zoomed');
+            }
+            
+            // Toggle zoom
+            function toggleZoom() {
+                isZoomed = !isZoomed;
+                lightboxImg.classList.toggle('zoomed');
+            }
+            
+            // Add click handlers to all blog images
+            blogImages.forEach((img, index) => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => openLightbox(index));
+            });
+            
+            // Event listeners
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', showPreviousImage);
+            nextBtn.addEventListener('click', showNextImage);
+            lightboxImg.addEventListener('click', toggleZoom);
+            
+            // Close on background click
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') showNextImage();
+                if (e.key === 'ArrowLeft') showPreviousImage();
+            });
+        });
+    </script>
     <!-- Hamburger Menu JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
