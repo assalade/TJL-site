@@ -10,6 +10,7 @@
 const galleryImages = [
     // Example images - replace these with your own!
     'HOME/Final_Final_Illustration_rain_small.jpg',
+    'HOME/FullCharacterConcept_ZOE.jpg',
     'HOME/ITZEL_HOUSE_SCREENSHOT.png',
     'HOME/Week1_WW_Fall_Laplanche.jpg',
     'HOME/corvosa_ext_line work.png',
